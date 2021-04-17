@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Table
+    uniqueID: 3120547583
+    locked: 0
+  - name: RestingTentacles
+    uniqueID: 2147521959
+    locked: 0
+  - name: NateTentacle
+    uniqueID: 1792239943
+    locked: 0
+  - name: NateHead
+    uniqueID: 865126051
+    locked: 0
