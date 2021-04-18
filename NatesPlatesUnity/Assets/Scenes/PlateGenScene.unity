@@ -585,8 +585,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbd6f6b823454252a18ec2adcb3622e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platePrefabs:
+  goodPlates:
   - {fileID: 6041824800344145634, guid: 323782bb8809b48ceade30808d7fbe79, type: 3}
+  badPlates: []
+  armPrefab: {fileID: 697868229898883533, guid: a7dcba874cebb41d6aec9f1b2a4208eb, type: 3}
 --- !u!4 &754971811
 Transform:
   m_ObjectHideFlags: 0

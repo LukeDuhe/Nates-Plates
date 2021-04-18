@@ -9,16 +9,17 @@ public class PlateGenerator : MonoBehaviour
     private int delay; //Temp delay between creating plate objects
     public GameObject[] goodPlates; //Array containing prefab GameObjects for plates with good objects (foods)
     public GameObject[] badPlates; //Array containing prefab GameObjects for plates with bad objects (traps, fire etc.)
+    public GameObject armPrefab; //Prefab server arm GameObject
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         frameCounter = 0;
-        delay = 100;
+        delay = 500;
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if(frameCounter++ > delay) {
             frameCounter = 0;
@@ -27,10 +28,40 @@ public class PlateGenerator : MonoBehaviour
     }
 
     //Create a new plate entity
-    void GeneratePlate()
+    public void GeneratePlate()
     {
-        var position = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), 0);
-        Instantiate(goodPlates[Random.Range(0, goodPlates.Length-1)], position, Quaternion.identity);
+        Vector3 armPosition = new Vector3(0,0,0);
+        Vector3 platePosition = new Vector3(0,0,0);
+        int tableQuadrant = Random.Range(0, 2);
+        switch(tableQuadrant) {
+            case 0: //Left Table Quadrant
+                armPosition = new Vector3(-20.0f, Random.Range(-14.0f, 14.0f));
+                platePosition = new Vector3(Random.Range(-10.0f, -8.0f), Random.Range(-6.5f, 6.5f));
+                break;
+            case 1: //Top Table Quadrant
+                armPosition = new Vector3(Random.Range(-20.0f, 20.0f), 14.0f);
+                platePosition = new Vector3(Random.Range(-9.0f, 9.0f), Random.Range(8.0f, 10.0f));
+                break;
+            case 2: //Right Table Quadrant
+                armPosition = new Vector3(20.0f, Random.Range(-14.0f, 14.0f));
+                platePosition = new Vector3(Random.Range(8.0f, 10.0f), Random.Range(-6.5f, 6.5f));
+                break;
+        }
+        // var armDirection = armPosition - platePosition
+        // Moon.transform.LookAt(Sun.transform);
+        //Add Transform.LookAt to the arm
+
+        //  armPosition = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), 0);
+        //  platePosition = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), 0);
+
+        //Create Arm GameObject
+        GameObject armObject = Instantiate(armPrefab, armPosition, Quaternion.identity) as GameObject;
+        ArmMover armScript = armObject.GetComponent(typeof(ArmMover)) as ArmMover;
+        armScript.Init(platePosition);
+
+        //Create Plate GameObject
+        GameObject plateObject = Instantiate(goodPlates[Random.Range(0, goodPlates.Length-1)], platePosition, Quaternion.identity);
+        
 
     }
 }
