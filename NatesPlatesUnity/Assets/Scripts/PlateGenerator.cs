@@ -32,19 +32,27 @@ public class PlateGenerator : MonoBehaviour
     {
         Vector3 armPosition = new Vector3(0,0,0);
         Vector3 platePosition = new Vector3(0,0,0);
+        float armRotate = 0.0f;
         int tableQuadrant = Random.Range(0, 2);
+        // tableQuadrant = 2;
         switch(tableQuadrant) {
             case 0: //Left Table Quadrant
+                Debug.Log("Drawing in Left Quadrant");
                 armPosition = new Vector3(-20.0f, Random.Range(-14.0f, 14.0f));
-                platePosition = new Vector3(Random.Range(-10.0f, -8.0f), Random.Range(-6.5f, 6.5f));
+                platePosition = new Vector3(Random.Range(-10.0f, -8.0f), Random.Range(-6.5f, 1.7f));
+                armRotate = -90.0f;
                 break;
             case 1: //Top Table Quadrant
+                Debug.Log("Drawing in Top Quadrant");
                 armPosition = new Vector3(Random.Range(-20.0f, 20.0f), 14.0f);
-                platePosition = new Vector3(Random.Range(-9.0f, 9.0f), Random.Range(8.0f, 10.0f));
+                platePosition = new Vector3(Random.Range(-9.0f, 9.0f), Random.Range(-1.0f, 1.7f));
+                armRotate = -90.0f;
                 break;
             case 2: //Right Table Quadrant
+                Debug.Log("Drawing in Right Quadrant");
                 armPosition = new Vector3(20.0f, Random.Range(-14.0f, 14.0f));
-                platePosition = new Vector3(Random.Range(8.0f, 10.0f), Random.Range(-6.5f, 6.5f));
+                platePosition = new Vector3(Random.Range(8.0f, 10.0f), Random.Range(-6.5f, 1.7f));
+                armRotate = 90.0f;
                 break;
         }
         // var armDirection = armPosition - platePosition
@@ -57,11 +65,12 @@ public class PlateGenerator : MonoBehaviour
         //Create Arm GameObject
         GameObject armObject = Instantiate(armPrefab, armPosition, Quaternion.identity) as GameObject;
         ArmMover armScript = armObject.GetComponent(typeof(ArmMover)) as ArmMover;
-        armScript.Init(platePosition);
-
-        //Create Plate GameObject
-        GameObject plateObject = Instantiate(goodPlates[Random.Range(0, goodPlates.Length-1)], platePosition, Quaternion.identity);
+        armScript.Init(platePosition, armRotate, gameObject);
+    }
+    //Create Plate GameObject
+    public void PlacePlate(Vector3 position, string type) 
+    {
         
-
+        GameObject plateObject = Instantiate(goodPlates[Random.Range(0, goodPlates.Length-1)], position, Quaternion.identity);
     }
 }

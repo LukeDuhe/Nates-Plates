@@ -9,6 +9,7 @@ public class ArmMover : MonoBehaviour
 
     //The arm is either serving (moving towards table) or not (away from table)
     private bool serving = true;
+    private PlateGenerator plateGenScript;
 
     float t;
     float timeToReachTarget;
@@ -21,21 +22,29 @@ public class ArmMover : MonoBehaviour
 
             // SetDestination(endPos, 4.0f);
      }
-     public void Init(Vector3 platePosition)
+     public void Init(Vector3 platePosition, float extraRotate, GameObject plateGenerator)
      {
          endPos = platePosition;
+        plateGenScript = plateGenerator.GetComponent(typeof(PlateGenerator)) as PlateGenerator;
 
+        //Turn arm to face the plate position
          transform.right = endPos - transform.position;
+
+        //Set destination to move arm to in update
          SetDestination(endPos, 4.0f);
      }
      void Update() 
      {
+            //Move to the set destination endPos
              t += Time.deltaTime/timeToReachTarget;
              transform.position = Vector3.Lerp(startPos, endPos, t);
+
+             //Once the destination has been reached, place a plate and reverse
              if(transform.position == endPos) {
                  if(serving) {
                     serving = false;
-                    SetDestination(startPos, 4.0f);
+                    plateGenScript.PlacePlate(endPos, "tomato");
+                    SetDestination(startPos, 3.0f);
                  }
                  else {
                      DestroyArm();
