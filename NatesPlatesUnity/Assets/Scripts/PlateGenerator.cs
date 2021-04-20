@@ -15,14 +15,15 @@ public class PlateGenerator : MonoBehaviour
     public void Start()
     {
         frameCounter = 0;
-        delay = 500;
+        delay = 200;
     }
 
     // Update is called once per frame
-    public void Update()
+    public void FixedUpdate()
     {
         if(frameCounter++ > delay) {
             frameCounter = 0;
+            if(delay > 50) delay-=10;
             GeneratePlate();
         }
     }
@@ -33,7 +34,7 @@ public class PlateGenerator : MonoBehaviour
         Vector3 armPosition = new Vector3(0,0,0);
         Vector3 platePosition = new Vector3(0,0,0);
         float armRotate = 0.0f;
-        int tableQuadrant = Random.Range(0, 2);
+        int tableQuadrant = Random.Range(0, 3);
         // tableQuadrant = 2;
         switch(tableQuadrant) {
             case 0: //Left Table Quadrant

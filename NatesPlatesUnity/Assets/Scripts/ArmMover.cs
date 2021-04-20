@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ArmMover : MonoBehaviour
 {
+    //Sprite for a hand with and without a plate
+    public SpriteRenderer fullHand;
+    public SpriteRenderer emptyHand;
+
     [SerializeField] private Vector3 startPos;
     [SerializeField] private Vector3 endPos;
 
@@ -43,6 +47,8 @@ public class ArmMover : MonoBehaviour
              if(transform.position == endPos) {
                  if(serving) {
                     serving = false;
+                    fullHand.enabled = false;
+                    emptyHand.enabled = true;
                     plateGenScript.PlacePlate(endPos, "tomato");
                     SetDestination(startPos, 3.0f);
                  }
