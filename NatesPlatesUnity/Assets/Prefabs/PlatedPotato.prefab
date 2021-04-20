@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatedPotato
       objectReference: {fileID: 0}
+    - target: {fileID: 6963177408151387047, guid: 9d0836af35c6e4308bfde3556f7799c1, type: 3}
+      propertyPath: m_TagString
+      value: PlatedPotato
+      objectReference: {fileID: 0}
     - target: {fileID: 8957044023722127369, guid: 9d0836af35c6e4308bfde3556f7799c1, type: 3}
       propertyPath: m_RootOrder
       value: 0

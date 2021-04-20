@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PlatedPoop
+  - PlatedPotato
+  - PlatedTomato
+  - PlatedToxicWaste
   layers:
   - Default
   - TransparentFX
@@ -43,6 +47,12 @@ TagManager:
     locked: 0
   - name: Table
     uniqueID: 3120547583
+    locked: 0
+  - name: ServerArm
+    uniqueID: 2984526697
+    locked: 0
+  - name: Plate
+    uniqueID: 1152904923
     locked: 0
   - name: RestingTentacles
     uniqueID: 2147521959
