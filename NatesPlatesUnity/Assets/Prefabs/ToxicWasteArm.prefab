@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5869783009235664592, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
+      propertyPath: plateObj
+      value: 
+      objectReference: {fileID: 4518175629855857335}
+    - target: {fileID: -5869783009235664592, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
+      propertyPath: plateType
+      value: ToxicWaste
+      objectReference: {fileID: 0}
+    - target: {fileID: -5869783009235664592, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
+      propertyPath: plateSprite
+      value: 
+      objectReference: {fileID: 537509263583793738}
     - target: {fileID: 697868229898883533, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
       propertyPath: m_Name
       value: ToxicWasteArm
@@ -127,3 +139,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c14bfabf0174f487fa268d6cc4d0aa66, type: 3}
+--- !u!1 &4518175629855857335 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8324894912889709623, guid: c14bfabf0174f487fa268d6cc4d0aa66, type: 3}
+  m_PrefabInstance: {fileID: 5563140832982072960}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &537509263583793738 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5350736843010288842, guid: c14bfabf0174f487fa268d6cc4d0aa66, type: 3}
+  m_PrefabInstance: {fileID: 5563140832982072960}
+  m_PrefabAsset: {fileID: 0}

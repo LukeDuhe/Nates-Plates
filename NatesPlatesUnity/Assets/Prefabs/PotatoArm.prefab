@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5869783009235664592, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
+      propertyPath: plateObj
+      value: 
+      objectReference: {fileID: 7136535194096180261}
+    - target: {fileID: -5869783009235664592, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
+      propertyPath: plateType
+      value: Potato
+      objectReference: {fileID: 0}
+    - target: {fileID: -5869783009235664592, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
+      propertyPath: plateSprite
+      value: 
+      objectReference: {fileID: 6542681244854605016}
     - target: {fileID: 697868229898883533, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
       propertyPath: m_Name
       value: PotatoArm
@@ -143,3 +155,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf4d4f6f2752b4456ac79f1d05ba88d5, type: 3}
+--- !u!1 &7136535194096180261 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5539799241451336917, guid: cf4d4f6f2752b4456ac79f1d05ba88d5, type: 3}
+  m_PrefabInstance: {fileID: 3452927196564449520}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &6542681244854605016 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8441723795532233768, guid: cf4d4f6f2752b4456ac79f1d05ba88d5, type: 3}
+  m_PrefabInstance: {fileID: 3452927196564449520}
+  m_PrefabAsset: {fileID: 0}

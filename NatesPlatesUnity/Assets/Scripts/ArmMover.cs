@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArmMover : MonoBehaviour
 {
     //GameObject of the plate
-    public GameObject plateObj;
+    public SpriteRenderer plateSprite;
     public string plateType;
 
     [SerializeField] private Vector3 startPos;
@@ -47,7 +47,8 @@ public class ArmMover : MonoBehaviour
              if(transform.position == endPos) {
                  if(serving) {
                     serving = false;
-                    plateObj.enabled = false;
+                    //delete the arm's plate object
+                    plateSprite.enabled = false;
                     plateGenScript.PlacePlate(endPos, "tomato");
                     SetDestination(startPos, 3.0f);
                  }

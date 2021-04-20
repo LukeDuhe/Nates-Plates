@@ -69,6 +69,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0b690633bc8841c08ecb76b01f67c65, type: 3}
+--- !u!1 &4274840108393160742 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3211604776587402165, guid: a0b690633bc8841c08ecb76b01f67c65, type: 3}
+  m_PrefabInstance: {fileID: 1712108837956058003}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &186087335897311451 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1537905161181516616, guid: a0b690633bc8841c08ecb76b01f67c65, type: 3}
+  m_PrefabInstance: {fileID: 1712108837956058003}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5468351203351534461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76,6 +86,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5869783009235664592, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
+      propertyPath: plateObj
+      value: 
+      objectReference: {fileID: 4274840108393160742}
+    - target: {fileID: -5869783009235664592, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
+      propertyPath: plateType
+      value: Tomato
+      objectReference: {fileID: 0}
+    - target: {fileID: -5869783009235664592, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
+      propertyPath: plateSprite
+      value: 
+      objectReference: {fileID: 186087335897311451}
     - target: {fileID: 697868229898883533, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
       propertyPath: m_Name
       value: TomatoArm

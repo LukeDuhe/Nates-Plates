@@ -73,6 +73,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ad5e16058453484bb69ba592a3a8cec, type: 3}
+--- !u!1 &3541244237284463956 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1780873146006851587, guid: 0ad5e16058453484bb69ba592a3a8cec, type: 3}
+  m_PrefabInstance: {fileID: 2995993743858337111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &6524014214645020900 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8293972669368106419, guid: 0ad5e16058453484bb69ba592a3a8cec, type: 3}
+  m_PrefabInstance: {fileID: 2995993743858337111}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7022862120153355709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80,6 +90,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5869783009235664592, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
+      propertyPath: plateObj
+      value: 
+      objectReference: {fileID: 3541244237284463956}
+    - target: {fileID: -5869783009235664592, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
+      propertyPath: plateType
+      value: Poop
+      objectReference: {fileID: 0}
+    - target: {fileID: -5869783009235664592, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
+      propertyPath: plateSprite
+      value: 
+      objectReference: {fileID: 6524014214645020900}
     - target: {fileID: 697868229898883533, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
       propertyPath: m_Name
       value: PoopArm

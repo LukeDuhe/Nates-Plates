@@ -7,9 +7,11 @@ public class PlateGenerator : MonoBehaviour
 {
     private int frameCounter;
     private int delay; //Temp delay between creating plate objects
+    public GameObject[] goodArms; //Array containing prefab GameObjects for arms with plates with good objects (foods)
+    public GameObject[] badArms; //Array containing prefab GameObjects for arms with plates with bad objects (traps, fire etc.)
     public GameObject[] goodPlates; //Array containing prefab GameObjects for plates with good objects (foods)
     public GameObject[] badPlates; //Array containing prefab GameObjects for plates with bad objects (traps, fire etc.)
-    public GameObject armPrefab; //Prefab server arm GameObject
+    private GameObject armPrefab; //Prefab server arm GameObject
 
     // Start is called before the first frame update
     public void Start()
@@ -63,6 +65,8 @@ public class PlateGenerator : MonoBehaviour
         //  armPosition = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), 0);
         //  platePosition = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), 0);
 
+        //Randomly generate a good plate
+        armPrefab = goodArms[Random.Range(0,goodArms.Length)] as GameObject;
         //Create Arm GameObject
         GameObject armObject = Instantiate(armPrefab, armPosition, Quaternion.identity) as GameObject;
         ArmMover armScript = armObject.GetComponent(typeof(ArmMover)) as ArmMover;
@@ -71,7 +75,6 @@ public class PlateGenerator : MonoBehaviour
     //Create Plate GameObject
     public void PlacePlate(Vector3 position, string type) 
     {
-        
-        GameObject plateObject = Instantiate(goodPlates[Random.Range(0, goodPlates.Length-1)], position, Quaternion.identity);
+        GameObject plateObject = Instantiate(goodPlates[Random.Range(0, goodPlates.Length-1)], position, Quaternion.identity) as GameObject;
     }
 }
