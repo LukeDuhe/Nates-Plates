@@ -13,11 +13,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 313301785200040877, guid: 0ad5e16058453484bb69ba592a3a8cec, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.65
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 313301785200040877, guid: 0ad5e16058453484bb69ba592a3a8cec, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.65
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 313301785200040877, guid: 0ad5e16058453484bb69ba592a3a8cec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -98,6 +98,10 @@ PrefabInstance:
       propertyPath: plateType
       value: Poop
       objectReference: {fileID: 0}
+    - target: {fileID: -5869783009235664592, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
+      propertyPath: platePrefab
+      value: 
+      objectReference: {fileID: 1780873146006851587, guid: 0ad5e16058453484bb69ba592a3a8cec, type: 3}
     - target: {fileID: -5869783009235664592, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
       propertyPath: plateSprite
       value: 

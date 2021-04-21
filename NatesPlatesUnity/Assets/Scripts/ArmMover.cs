@@ -6,7 +6,7 @@ public class ArmMover : MonoBehaviour
 {
     //GameObject of the plate
     public SpriteRenderer plateSprite;
-    public string plateType;
+    public GameObject platePrefab;
 
     [SerializeField] private Vector3 startPos;
     [SerializeField] private Vector3 endPos;
@@ -49,7 +49,7 @@ public class ArmMover : MonoBehaviour
                     serving = false;
                     //delete the arm's plate object
                     plateSprite.enabled = false;
-                    plateGenScript.PlacePlate(endPos, "tomato");
+                    PlacePlate(endPos);
                     SetDestination(startPos, 3.0f);
                  }
                  else {
@@ -64,6 +64,12 @@ public class ArmMover : MonoBehaviour
             timeToReachTarget = time;
             endPos = destination; 
      }
+
+    //Create Plate GameObject
+    public void PlacePlate(Vector3 position) 
+    {
+        GameObject plateObject = Instantiate(platePrefab, position, Quaternion.identity) as GameObject;
+    }
 
     public void DestroyArm()
     {

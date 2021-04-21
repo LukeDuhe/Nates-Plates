@@ -17,11 +17,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3494253896718471195, guid: a0b690633bc8841c08ecb76b01f67c65, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.65
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 3494253896718471195, guid: a0b690633bc8841c08ecb76b01f67c65, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.65
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 3494253896718471195, guid: a0b690633bc8841c08ecb76b01f67c65, type: 3}
       propertyPath: m_LocalScale.z
@@ -94,6 +94,10 @@ PrefabInstance:
       propertyPath: plateType
       value: Tomato
       objectReference: {fileID: 0}
+    - target: {fileID: -5869783009235664592, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
+      propertyPath: platePrefab
+      value: 
+      objectReference: {fileID: 3211604776587402165, guid: a0b690633bc8841c08ecb76b01f67c65, type: 3}
     - target: {fileID: -5869783009235664592, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
       propertyPath: plateSprite
       value: 

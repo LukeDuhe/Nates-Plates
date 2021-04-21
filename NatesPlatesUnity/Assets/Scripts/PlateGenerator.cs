@@ -72,9 +72,5 @@ public class PlateGenerator : MonoBehaviour
         ArmMover armScript = armObject.GetComponent(typeof(ArmMover)) as ArmMover;
         armScript.Init(platePosition, armRotate, gameObject);
     }
-    //Create Plate GameObject
-    public void PlacePlate(Vector3 position, string type) 
-    {
-        GameObject plateObject = Instantiate(goodPlates[Random.Range(0, goodPlates.Length-1)], position, Quaternion.identity) as GameObject;
-    }
+    
 }
