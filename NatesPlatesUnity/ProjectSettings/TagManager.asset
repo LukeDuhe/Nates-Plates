@@ -8,6 +8,14 @@ TagManager:
   - PlatedPotato
   - PlatedTomato
   - PlatedToxicWaste
+  - dirtyPlate
+  - Sink
+  - Nate
+  - Tomato
+  - Potato
+  - PlatedLighter
+  - Lighter
+  - Poop
   layers:
   - Default
   - TransparentFX
@@ -59,6 +67,9 @@ TagManager:
     locked: 0
   - name: NateTentacle
     uniqueID: 1792239943
+    locked: 0
+  - name: HeldItem
+    uniqueID: 2888816501
     locked: 0
   - name: NateHead
     uniqueID: 865126051
