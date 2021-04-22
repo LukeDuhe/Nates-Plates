@@ -74,3 +74,9 @@ TagManager:
   - name: NateHead
     uniqueID: 865126051
     locked: 0
+  - name: HUD01
+    uniqueID: 3724795599
+    locked: 0
+  - name: HUD02
+    uniqueID: 3049285063
+    locked: 0
