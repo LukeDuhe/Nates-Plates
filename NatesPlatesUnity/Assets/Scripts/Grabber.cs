@@ -16,6 +16,7 @@ public class Grabber : MonoBehaviour
 
     public GameObject dirtyPlate;
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (notHoldingAnything && collision.CompareTag("PlatedTomato"))

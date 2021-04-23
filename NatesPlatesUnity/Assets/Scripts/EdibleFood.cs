@@ -1,0 +1,38 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EdibleFood : MonoBehaviour
+{
+    public int points = 0;
+    private Animator nateAnimator;
+    private ScoreTracker scoreTracker;
+    private bool isTouchingNate = false;
+
+
+    private void Awake()
+    {
+        scoreTracker = FindObjectOfType<ScoreTracker>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (isTouchingNate)
+        {
+            scoreTracker.AddPoints(points);
+            GetComponentInParent<Grabber>().notHoldingAnything = true;
+            nateAnimator.Play("Nate Eating");
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Nate"))
+        {
+            nateAnimator = collision.gameObject.GetComponent<Animator>();
+            isTouchingNate = true;
+        }
+    }
+}
