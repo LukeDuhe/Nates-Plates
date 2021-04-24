@@ -16,6 +16,7 @@ TagManager:
   - PlatedLighter
   - Lighter
   - Poop
+  - GloveSpot
   layers:
   - Default
   - TransparentFX
@@ -67,6 +68,9 @@ TagManager:
     locked: 0
   - name: NateTentacle
     uniqueID: 1792239943
+    locked: 0
+  - name: Gloves
+    uniqueID: 3728204425
     locked: 0
   - name: HeldItem
     uniqueID: 2888816501
