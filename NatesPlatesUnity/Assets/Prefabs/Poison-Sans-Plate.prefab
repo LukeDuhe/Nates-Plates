@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f5109687f48644518ee0aa495b1e457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poisonProperty: {fileID: 7319331769867725418, guid: a64f20341d4a747ff93300e3bffeb50f, type: 3}
 --- !u!70 &3293131250770819294
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
