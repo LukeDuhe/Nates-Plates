@@ -5,10 +5,9 @@ using UnityEngine;
 public class PoisonGenerator : MonoBehaviour
 {
     public GameObject poisonProperty;
-    public GameObject gm;
-    // public GameMaster gm = gameObject.Find("GameMaster").GetComponent<GameMaster>();
+    public GameMaster gm;
     void Start() {
-        gm = gameObject.Find("GameMaster") as GameObject;
+        gm = GameObject.Find("GameMaster").GetComponent<GameMaster>();
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
