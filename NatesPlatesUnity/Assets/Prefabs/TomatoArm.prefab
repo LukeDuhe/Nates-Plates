@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3211604776587402165, guid: a0b690633bc8841c08ecb76b01f67c65, type: 3}
       propertyPath: m_Name
-      value: PlatedTomato
+      value: Plate
       objectReference: {fileID: 0}
     - target: {fileID: 3494253896718471195, guid: a0b690633bc8841c08ecb76b01f67c65, type: 3}
       propertyPath: m_RootOrder

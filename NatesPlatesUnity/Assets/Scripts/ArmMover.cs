@@ -28,14 +28,21 @@ public class ArmMover : MonoBehaviour
      }
      public void Init(Vector3 platePosition, float extraRotate, GameObject plateGenerator)
      {
-         endPos = platePosition;
+        endPos = platePosition;
         plateGenScript = plateGenerator.GetComponent(typeof(PlateGenerator)) as PlateGenerator;
+
+        // Flip the arms coming from the left side of the screen
+        if(endPos.x > transform.position.x) {
+            var plate = transform.Find("Plate");
+            plate.GetComponent<SpriteRenderer>().flipY = true;
+            plate.GetComponent<Transform>().localPosition += new Vector3(0.0f,.4f,0.0f);
+        }
 
         //Turn arm to face the plate position
          transform.right = endPos - transform.position;
 
         //Set destination to move arm to in update
-         SetDestination(endPos, 4.0f);
+         SetDestination(endPos, 3.0f);
      }
      void Update() 
      {

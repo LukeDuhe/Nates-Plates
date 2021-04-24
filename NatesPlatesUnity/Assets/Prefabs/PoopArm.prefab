@@ -61,7 +61,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780873146006851587, guid: 0ad5e16058453484bb69ba592a3a8cec, type: 3}
       propertyPath: m_Name
-      value: PlatedPoop
+      value: Plate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293972669368106419, guid: 0ad5e16058453484bb69ba592a3a8cec, type: 3}
+      propertyPath: m_FlipY
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8293972669368106419, guid: 0ad5e16058453484bb69ba592a3a8cec, type: 3}
       propertyPath: m_SortingLayer

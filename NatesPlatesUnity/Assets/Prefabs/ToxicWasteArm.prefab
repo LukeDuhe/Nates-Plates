@@ -27,6 +27,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ToxicWasteArm
       objectReference: {fileID: 0}
+    - target: {fileID: 949929335305425635, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 949929335305425635, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6243404230144103393, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -139,7 +147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8324894912889709623, guid: c14bfabf0174f487fa268d6cc4d0aa66, type: 3}
       propertyPath: m_Name
-      value: PlatedToxicWaste
+      value: Plate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c14bfabf0174f487fa268d6cc4d0aa66, type: 3}

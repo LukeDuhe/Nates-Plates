@@ -103,7 +103,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5539799241451336917, guid: cf4d4f6f2752b4456ac79f1d05ba88d5, type: 3}
       propertyPath: m_Name
-      value: PlatedPotato
+      value: Plate
       objectReference: {fileID: 0}
     - target: {fileID: 5768740516614258555, guid: cf4d4f6f2752b4456ac79f1d05ba88d5, type: 3}
       propertyPath: m_RootOrder
