@@ -16,6 +16,7 @@ TagManager:
   - PlatedLighter
   - Lighter
   - Poop
+  - PoisonedFood
   layers:
   - Default
   - TransparentFX
