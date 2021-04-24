@@ -6,7 +6,7 @@ public class ArmMover : MonoBehaviour
 {
     //GameObject of the plate
     public SpriteRenderer plateSprite;
-    public string plateType;
+    public GameObject platePrefab;
 
     [SerializeField] private Vector3 startPos;
     [SerializeField] private Vector3 endPos;
@@ -28,14 +28,21 @@ public class ArmMover : MonoBehaviour
      }
      public void Init(Vector3 platePosition, float extraRotate, GameObject plateGenerator)
      {
-         endPos = platePosition;
+        endPos = platePosition;
         plateGenScript = plateGenerator.GetComponent(typeof(PlateGenerator)) as PlateGenerator;
+
+        // Flip the arms coming from the left side of the screen
+        if(endPos.x > transform.position.x) {
+            var plate = transform.Find("Plate");
+            plate.GetComponent<SpriteRenderer>().flipY = true;
+            plate.GetComponent<Transform>().localPosition += new Vector3(0.0f,.4f,0.0f);
+        }
 
         //Turn arm to face the plate position
          transform.right = endPos - transform.position;
 
         //Set destination to move arm to in update
-         SetDestination(endPos, 4.0f);
+         SetDestination(endPos, 3.0f);
      }
      void Update() 
      {
@@ -49,7 +56,7 @@ public class ArmMover : MonoBehaviour
                     serving = false;
                     //delete the arm's plate object
                     plateSprite.enabled = false;
-                    plateGenScript.PlacePlate(endPos, "tomato");
+                    PlacePlate(endPos);
                     SetDestination(startPos, 3.0f);
                  }
                  else {
@@ -64,6 +71,12 @@ public class ArmMover : MonoBehaviour
             timeToReachTarget = time;
             endPos = destination; 
      }
+
+    //Create Plate GameObject
+    public void PlacePlate(Vector3 position) 
+    {
+        GameObject plateObject = Instantiate(platePrefab, position, Quaternion.identity) as GameObject;
+    }
 
     public void DestroyArm()
     {

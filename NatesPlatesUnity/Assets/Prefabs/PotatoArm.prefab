@@ -16,6 +16,10 @@ PrefabInstance:
       value: Potato
       objectReference: {fileID: 0}
     - target: {fileID: -5869783009235664592, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
+      propertyPath: platePrefab
+      value: 
+      objectReference: {fileID: 5539799241451336917, guid: cf4d4f6f2752b4456ac79f1d05ba88d5, type: 3}
+    - target: {fileID: -5869783009235664592, guid: 2b3c7be47ad9646b1b8be1d5930b0208, type: 3}
       propertyPath: plateSprite
       value: 
       objectReference: {fileID: 6542681244854605016}
@@ -99,7 +103,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5539799241451336917, guid: cf4d4f6f2752b4456ac79f1d05ba88d5, type: 3}
       propertyPath: m_Name
-      value: PlatedPotato
+      value: Plate
       objectReference: {fileID: 0}
     - target: {fileID: 5768740516614258555, guid: cf4d4f6f2752b4456ac79f1d05ba88d5, type: 3}
       propertyPath: m_RootOrder
@@ -107,11 +111,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5768740516614258555, guid: cf4d4f6f2752b4456ac79f1d05ba88d5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.65
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 5768740516614258555, guid: cf4d4f6f2752b4456ac79f1d05ba88d5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.65
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 5768740516614258555, guid: cf4d4f6f2752b4456ac79f1d05ba88d5, type: 3}
       propertyPath: m_LocalPosition.x
