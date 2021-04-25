@@ -18,6 +18,8 @@ TagManager:
   - Poop
   - PoisonedFood
   - GloveSpot
+  - Trash
+  - ToxicWasteBin
   layers:
   - Default
   - TransparentFX

@@ -962,6 +962,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floating-Trash
       objectReference: {fileID: 0}
+    - target: {fileID: 5328423012451730271, guid: c12a5d32bf38740dcba89671c4e672f0, type: 3}
+      propertyPath: m_TagString
+      value: Trash
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c12a5d32bf38740dcba89671c4e672f0, type: 3}
 --- !u!1 &547484376
@@ -1676,6 +1680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488317d9221f14fb09fce68b6b9076d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthLossPerSecond: 2
 --- !u!212 &1163109907
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1911,6 +1916,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -35}
+--- !u!1 &1283426413 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4795575046136558627, guid: 6e4bb03b716b94fdd9043daf03bee76b, type: 3}
+  m_PrefabInstance: {fileID: 1313464846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1283426414
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283426413}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.008966625, y: 0.08966553}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5626763, y: 0.5806093}
+  m_EdgeRadius: 0
 --- !u!1001 &1313464846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1921,6 +1957,10 @@ PrefabInstance:
     - target: {fileID: 4795575046136558627, guid: 6e4bb03b716b94fdd9043daf03bee76b, type: 3}
       propertyPath: m_Name
       value: Floating-NukeWaste
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795575046136558627, guid: 6e4bb03b716b94fdd9043daf03bee76b, type: 3}
+      propertyPath: m_TagString
+      value: ToxicWasteBin
       objectReference: {fileID: 0}
     - target: {fileID: 4795575046136558629, guid: 6e4bb03b716b94fdd9043daf03bee76b, type: 3}
       propertyPath: m_SortingLayer
@@ -2176,6 +2216,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1993152828095050980, guid: 53f5d7e9df4264a8c95d7985c1a0f691, type: 3}
+      propertyPath: vertical_max
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993152828095050982, guid: 53f5d7e9df4264a8c95d7985c1a0f691, type: 3}
+      propertyPath: dirtyPlate
+      value: 
+      objectReference: {fileID: 7684821716450457268, guid: dc11d4faa62e449078920a13ead36652, type: 3}
     - target: {fileID: 1993152828638424092, guid: 53f5d7e9df4264a8c95d7985c1a0f691, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.62
@@ -2931,6 +2979,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993152828095050980, guid: 53f5d7e9df4264a8c95d7985c1a0f691, type: 3}
+      propertyPath: vertical_max
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993152828095050980, guid: 53f5d7e9df4264a8c95d7985c1a0f691, type: 3}
       propertyPath: horizontal_max
       value: 1.5
       objectReference: {fileID: 0}
@@ -2950,6 +3002,10 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1993152828095050982, guid: 53f5d7e9df4264a8c95d7985c1a0f691, type: 3}
+      propertyPath: dirtyPlate
+      value: 
+      objectReference: {fileID: 7684821716450457268, guid: dc11d4faa62e449078920a13ead36652, type: 3}
     - target: {fileID: 1993152828638424092, guid: 53f5d7e9df4264a8c95d7985c1a0f691, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.62
