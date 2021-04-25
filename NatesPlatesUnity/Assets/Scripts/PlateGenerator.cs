@@ -5,14 +5,20 @@ using UnityEngine;
 
 public class PlateGenerator : MonoBehaviour
 {
-    private int frameCounter;
-    private int delay; //Temp delay between creating plate objects
+    // private int frameCounter;
+    // private int delay; //Temp delay between creating plate objects
+    // private int itemLimit = 18;
+    private bool graceFlag = false; //Used to make it less noticeable that there's an item limit
+
     public int BadSpawnRate = 2; //Lower = more bad plates, minimum is 2
     public float PlateSpawnRate = 5.0f;
+    public float PlateGracePeriod = 5.0f;
+
     public GameObject[] goodArms; //Array containing prefab GameObjects for arms with plates with good objects (foods)
     public GameObject[] badArms; //Array containing prefab GameObjects for arms with plates with bad objects (traps, fire etc.)
     public GameObject[] goodPlates; //Array containing prefab GameObjects for plates with good objects (foods)
     public GameObject[] badPlates; //Array containing prefab GameObjects for plates with bad objects (traps, fire etc.)
+
     private GameObject armPrefab; //Prefab server arm GameObject
     private GameMaster gm;
 
@@ -20,29 +26,24 @@ public class PlateGenerator : MonoBehaviour
     public void Start()
     {
         gm = GameObject.Find("GameMaster").GetComponent<GameMaster>();
-        frameCounter = 0;
-        delay = 200;
-        PlateSpawnRate = gm.GetPlateSpawnRate();
         StartCoroutine("PlateSpawnTimer");
     }
 
-    // Update is called once per frame
-    public void FixedUpdate()
-    {
-        if(frameCounter++ > delay) {
-            frameCounter = 0;
-            if(delay > 50) delay-=10;
-            GeneratePlate();
-        }
-    }
-
+    //Timing code for spawning plates, increases in frequency as the stage increases
+    //If the item limit is reached a grace period starts to give the player time to remove items without instantly adding a new one
     private IEnumerator PlateSpawnTimer()
     {
         while (true)
         {
-            PlateSpawnRate = gm.GetPlateSpawnRate();
-            yield return new WaitForSeconds(PlateSpawnRate);
-            GeneratePlate();
+            if(graceFlag) {
+                graceFlag = false;
+                yield return new WaitForSeconds(PlateGracePeriod);
+            }
+            else {
+                PlateSpawnRate = gm.GetPlateSpawnRate();
+                yield return new WaitForSeconds(PlateSpawnRate);
+                GeneratePlate();
+            }
         }
     }
 
@@ -106,6 +107,9 @@ public class PlateGenerator : MonoBehaviour
         GameObject armObject = Instantiate(armPrefab, armPosition, Quaternion.identity) as GameObject;
         ArmMover armScript = armObject.GetComponent(typeof(ArmMover)) as ArmMover;
         armScript.Init(platePosition, armRotate, gameObject);
+
+        //Determine if the item limit has been reached, triggering a grace period
+        if(gm.AddItem() > gm.GetItemLimit()) graceFlag = true;
     }
     
 }

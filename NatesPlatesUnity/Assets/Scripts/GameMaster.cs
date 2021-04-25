@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameMaster : MonoBehaviour
 {
-    public const int itemLimit = 18;
     /*
     What each stage introduces
     Stage Level 0: Tomatoes
@@ -16,7 +15,11 @@ public class GameMaster : MonoBehaviour
     */
     private int stage; //Stage Level is used to determine what plates to spawn and how often, as well as scoring
     private int actionsTaken; //Stage increments as the player takes more actions (eats, throws plates away, etc.)
-    private float plateSpawnRate;
+    private int numItems;
+    
+
+    public float plateSpawnRate = 4.0f; //How often to spawn the arms in seconds
+    public const int itemLimit = 18;
 
 
     // Start is called before the first frame update
@@ -24,7 +27,6 @@ public class GameMaster : MonoBehaviour
     {
         actionsTaken = 0;
         stage = 0;
-        plateSpawnRate = 5.0f;
         Debug.Log("Plate Rate = " + plateSpawnRate);
     }
 
@@ -68,6 +70,21 @@ public class GameMaster : MonoBehaviour
     public float GetPlateSpawnRate()
     {
         return plateSpawnRate;
+    }
+
+    public int AddItem()
+    {
+        return ++numItems;
+    }
+
+    public int RemoveItem()
+    {
+        return --numItems;
+    }
+
+    public int GetItemLimit()
+    {
+        return itemLimit;
     }
 
     public void TakeAction() {
