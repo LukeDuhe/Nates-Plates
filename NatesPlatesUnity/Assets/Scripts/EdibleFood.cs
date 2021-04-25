@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EdibleFood : MonoBehaviour
 {
+    public int recovery = 20;
+
     public int points = 0;
     public AudioClip munchingSound;
     private Animator nateAnimator;
@@ -22,9 +24,13 @@ public class EdibleFood : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isTouchingNate
-        && !transform.Find("PoisonProperty") && !transform.Find("PoisonProperty(Clone)"))
+        if (
+            isTouchingNate
+            && !transform.Find("PoisonProperty")
+            && !transform.Find("PoisonProperty(Clone)")
+        )
         {
+            GameObject.Find("HealthBar").GetComponent<HealthBar>().IncreaseHealth(recovery);
             scoreTracker.AddPoints(points);
             GetComponentInParent<Grabber>().notHoldingAnything = true;
             nateAudioSource.PlayOneShot(munchingSound);
