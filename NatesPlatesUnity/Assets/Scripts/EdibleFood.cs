@@ -5,7 +5,9 @@ using UnityEngine;
 public class EdibleFood : MonoBehaviour
 {
     public int points = 0;
+    public AudioClip munchingSound;
     private Animator nateAnimator;
+    private AudioSource nateAudioSource;
     private ScoreTracker scoreTracker;
     private bool isTouchingNate = false;
 
@@ -22,6 +24,7 @@ public class EdibleFood : MonoBehaviour
         {
             scoreTracker.AddPoints(points);
             GetComponentInParent<Grabber>().notHoldingAnything = true;
+            nateAudioSource.PlayOneShot(munchingSound);
             nateAnimator.Play("Nate Eating");
             Destroy(gameObject);
         }
@@ -32,6 +35,7 @@ public class EdibleFood : MonoBehaviour
         if (collision.CompareTag("Nate"))
         {
             nateAnimator = collision.gameObject.GetComponent<Animator>();
+            nateAudioSource = collision.gameObject.GetComponent<AudioSource>();
             isTouchingNate = true;
         }
     }

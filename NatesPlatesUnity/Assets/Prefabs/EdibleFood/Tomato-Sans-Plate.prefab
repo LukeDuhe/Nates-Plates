@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1406150795
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0a3872599e78f47fa8e8b99e4c449870, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 800
+  munchingSound: {fileID: 8300000, guid: fa1f108477af8448e8ad96e0aac67b69, type: 3}
 --- !u!70 &4193048500794095114
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

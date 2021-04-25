@@ -12,7 +12,7 @@ public class RecepticalMovement : MonoBehaviour
 
     public Vector3 centerPosition;
 
-    private bool movingRight;
+    public bool movingRight;
 
     private Vector3 xMax;
     private Vector3 xMin;

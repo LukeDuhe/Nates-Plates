@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Grabber : MonoBehaviour
 {
+    public AudioClip schlorp;
     public bool notHoldingAnything = true;
     public bool gloved = false;
     private bool canRemoveGlove = false;
@@ -97,6 +98,7 @@ public class Grabber : MonoBehaviour
 
     private void GrabItemOffPlate(GameObject item, GameObject collidingObject)
     {
+        GetComponent<AudioSource>().PlayOneShot(schlorp);
         notHoldingAnything = false;
         Instantiate(dirtyPlate, collidingObject.transform.position, collidingObject.transform.rotation);
         Destroy(collidingObject);
