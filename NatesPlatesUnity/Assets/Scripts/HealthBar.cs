@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HealthBar : MonoBehaviour
 {
+    public float healthLossPerSecond = 2;
+
     private float maxHealth = 100;
     private float hp = 100;
     private float minHealth = 0;
@@ -16,6 +18,8 @@ public class HealthBar : MonoBehaviour
     {
         initialScale = transform.localScale;
         initialPosition = transform.position;
+
+        StartCoroutine("ConstantlyLoseHealth");
     }
 
     void Update()
@@ -24,12 +28,22 @@ public class HealthBar : MonoBehaviour
         transform.position = new Vector3(initialPosition.x + ((initialScale.x * .5f) * ((maxHealth - hp) / maxHealth)), initialPosition.y, initialPosition.z);
     }
 
+    private IEnumerator ConstantlyLoseHealth()
+    {
+        while (true)
+        {
+            DecreaseHealth(healthLossPerSecond);
+            yield return new WaitForSeconds(1.0f);
+        }
+    }
+
     public void IncreaseHealth(float points)
     {
         if ((hp + points) > maxHealth)
         {
             hp = maxHealth;
-        } else
+        }
+        else
         {
             hp += points;
         }
