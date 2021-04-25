@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class RecepticalMovement : MonoBehaviour
 {
-    public bool movementActive = false;
+    private bool movementActive = false;
+    private bool comingIn = false;
 
     public int speed = 1;
 
@@ -25,6 +26,19 @@ public class RecepticalMovement : MonoBehaviour
 
     private void Update()
     {
+        if (comingIn)
+        {
+            if (Vector2.Distance(transform.position, centerPosition) > 0.01)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, centerPosition, speed * Time.deltaTime);
+            }
+            else
+            {
+                comingIn = false;
+                movementActive = true;
+            }
+        }
+
         if (movementActive)
         {
             if (Vector2.Distance(transform.position, xMax) < 0.01)
@@ -45,5 +59,10 @@ public class RecepticalMovement : MonoBehaviour
                 transform.position = Vector2.MoveTowards(transform.position, xMin, speed * Time.deltaTime);
             } 
         }
+    }
+
+    private void BringItIn()
+    {
+        comingIn = true;
     }
 }
