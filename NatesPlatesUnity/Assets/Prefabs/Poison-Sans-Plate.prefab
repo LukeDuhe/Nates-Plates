@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8273706406834649829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.85, y: -3, z: 0}
-  m_LocalScale: {x: 0.65, y: 0.65, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poisonProperty: {fileID: 7319331769867725418, guid: a64f20341d4a747ff93300e3bffeb50f, type: 3}
-  gm: {fileID: 0}
 --- !u!70 &3293131250770819294
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

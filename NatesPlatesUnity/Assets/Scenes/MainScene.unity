@@ -2442,6 +2442,10 @@ PrefabInstance:
       propertyPath: dirtyPlate
       value: 
       objectReference: {fileID: 7684821716450457268, guid: dc11d4faa62e449078920a13ead36652, type: 3}
+    - target: {fileID: 1993152828095050982, guid: 53f5d7e9df4264a8c95d7985c1a0f691, type: 3}
+      propertyPath: poisonProperty
+      value: 
+      objectReference: {fileID: 7319331769867725418, guid: a64f20341d4a747ff93300e3bffeb50f, type: 3}
     - target: {fileID: 1993152828638424092, guid: 53f5d7e9df4264a8c95d7985c1a0f691, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.62
@@ -3232,6 +3236,10 @@ PrefabInstance:
       propertyPath: dirtyPlate
       value: 
       objectReference: {fileID: 7684821716450457268, guid: dc11d4faa62e449078920a13ead36652, type: 3}
+    - target: {fileID: 1993152828095050982, guid: 53f5d7e9df4264a8c95d7985c1a0f691, type: 3}
+      propertyPath: poisonProperty
+      value: 
+      objectReference: {fileID: 7319331769867725418, guid: a64f20341d4a747ff93300e3bffeb50f, type: 3}
     - target: {fileID: 1993152828638424092, guid: 53f5d7e9df4264a8c95d7985c1a0f691, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.62

@@ -22,7 +22,8 @@ public class EdibleFood : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isTouchingNate)
+        if (isTouchingNate
+        && !transform.Find("PoisonProperty") && !transform.Find("PoisonProperty(Clone)"))
         {
             scoreTracker.AddPoints(points);
             GetComponentInParent<Grabber>().notHoldingAnything = true;
