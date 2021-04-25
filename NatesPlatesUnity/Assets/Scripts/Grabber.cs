@@ -7,6 +7,7 @@ public class Grabber : MonoBehaviour
     public AudioClip schlorp;
     public bool notHoldingAnything = true;
     public bool gloved = false;
+    public bool isRightTentacle;
     private bool canRemoveGlove = false;
 
     public Transform grabLocation;
@@ -43,29 +44,29 @@ public class Grabber : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!gloved)
+        if (!gloved && notHoldingAnything)
         {
-            if (notHoldingAnything && collision.CompareTag("PlatedTomato"))
+            if (collision.CompareTag("PlatedTomato"))
             {
                 GrabItemOffPlate(tomato, collision.gameObject);
             }
 
-            if (notHoldingAnything && collision.CompareTag("PlatedPotato"))
+            if (collision.CompareTag("PlatedPotato"))
             {
                 GrabItemOffPlate(potato, collision.gameObject);
             }
 
-            if (notHoldingAnything && collision.CompareTag("PlatedLighter"))
+            if (collision.CompareTag("PlatedLighter"))
             {
                 GrabItemOffPlate(lighter, collision.gameObject);
             }
 
-            if (notHoldingAnything && collision.CompareTag("PlatedPoop"))
+            if (collision.CompareTag("PlatedPoop"))
             {
                 GrabItemOffPlate(poop, collision.gameObject);
             }
 
-            if (notHoldingAnything && collision.CompareTag("dirtyPlate"))
+            if (collision.CompareTag("dirtyPlate"))
             {
                 notHoldingAnything = false;
                 collision.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "HeldItem";
@@ -73,7 +74,14 @@ public class Grabber : MonoBehaviour
                 collision.gameObject.transform.parent = gameObject.transform;
             }
 
-            if (notHoldingAnything && collision.CompareTag("GloveSpot"))
+            if (collision.CompareTag("GloveSpotLeft") && !isRightTentacle)
+            {
+                canRemoveGlove = false;
+                collision.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.25f);
+                PutOnGlove();
+            }
+
+            if (collision.CompareTag("GloveSpotRight") && isRightTentacle)
             {
                 canRemoveGlove = false;
                 collision.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.25f);
@@ -87,7 +95,13 @@ public class Grabber : MonoBehaviour
                 GrabItemOffPlate(toxicWaste, collision.gameObject);
             }
 
-            if (canRemoveGlove && notHoldingAnything && collision.CompareTag("GloveSpot"))
+            if (canRemoveGlove && notHoldingAnything && collision.CompareTag("GloveSpotLeft") && !isRightTentacle)
+            {
+                collision.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+                RemoveGlove();
+            }
+
+            if (canRemoveGlove && notHoldingAnything && collision.CompareTag("GloveSpotRight") && isRightTentacle)
             {
                 collision.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
                 RemoveGlove();
@@ -97,7 +111,12 @@ public class Grabber : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("GloveSpot"))
+        if (collision.CompareTag("GloveSpotLeft") && !isRightTentacle)
+        {
+            canRemoveGlove = true;
+        }
+
+        if (collision.CompareTag("GloveSpotRight") && isRightTentacle)
         {
             canRemoveGlove = true;
         }
