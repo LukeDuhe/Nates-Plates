@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3900097119028223294}
   - component: {fileID: -7557304581182904790}
   - component: {fileID: 4193048500794095114}
+  - component: {fileID: 5994204439248034652}
   m_Layer: 0
   m_Name: Tomato-Sans-Plate
   m_TagString: Tomato
@@ -114,3 +115,16 @@ CapsuleCollider2D:
   m_Offset: {x: -0.011486326, y: 0.3443641}
   m_Size: {x: 1.824487, y: 1.4801289}
   m_Direction: 1
+--- !u!114 &5994204439248034652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772881786945037602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d424133e7f6a240d3b344c8d319a54e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 0

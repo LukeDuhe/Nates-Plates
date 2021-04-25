@@ -40,19 +40,16 @@ public class PlateGenerator : MonoBehaviour
         // tableQuadrant = 2;
         switch(tableQuadrant) {
             case 0: //Left Table Quadrant
-                Debug.Log("Drawing in Left Quadrant");
                 armPosition = new Vector3(-20.0f, Random.Range(-14.0f, 14.0f));
                 platePosition = new Vector3(Random.Range(-10.0f, -8.0f), Random.Range(-6.5f, 1.7f));
                 armRotate = -90.0f;
                 break;
             case 1: //Top Table Quadrant
-                Debug.Log("Drawing in Top Quadrant");
                 armPosition = new Vector3(Random.Range(-20.0f, 20.0f), 14.0f);
                 platePosition = new Vector3(Random.Range(-9.0f, 9.0f), Random.Range(-1.0f, 1.7f));
                 armRotate = -90.0f;
                 break;
             case 2: //Right Table Quadrant
-                Debug.Log("Drawing in Right Quadrant");
                 armPosition = new Vector3(20.0f, Random.Range(-14.0f, 14.0f));
                 platePosition = new Vector3(Random.Range(8.0f, 10.0f), Random.Range(-6.5f, 1.7f));
                 armRotate = 90.0f;

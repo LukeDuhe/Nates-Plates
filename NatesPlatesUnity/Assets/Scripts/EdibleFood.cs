@@ -10,11 +10,13 @@ public class EdibleFood : MonoBehaviour
     private AudioSource nateAudioSource;
     private ScoreTracker scoreTracker;
     private bool isTouchingNate = false;
+    private GameMaster gm;
 
 
     private void Awake()
     {
         scoreTracker = FindObjectOfType<ScoreTracker>();
+        gm = GameObject.Find("GameMaster").GetComponent<GameMaster>();
     }
 
     // Update is called once per frame
@@ -27,6 +29,7 @@ public class EdibleFood : MonoBehaviour
             nateAudioSource.PlayOneShot(munchingSound);
             nateAnimator.Play("Nate Eating");
             Destroy(gameObject);
+            gm.TakeAction();
         }
     }
 

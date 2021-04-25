@@ -5,7 +5,7 @@ using UnityEngine;
 public class PoisonGenerator : MonoBehaviour
 {
     public GameObject poisonProperty;
-    public GameMaster gm;
+    private GameMaster gm;
     void Start() {
         gm = GameObject.Find("GameMaster").GetComponent<GameMaster>();
     }
@@ -20,7 +20,7 @@ public class PoisonGenerator : MonoBehaviour
                 other.GetComponent<SpriteRenderer>().color = Color.green;
                 GameObject prop = Instantiate(poisonProperty, new Vector3(0,0,0), Quaternion.identity) as GameObject;
                 prop.GetComponent<Transform>().parent = other.transform;
-                // gm.TakeAction();
+                gm.TakeAction();
             }
 
         }

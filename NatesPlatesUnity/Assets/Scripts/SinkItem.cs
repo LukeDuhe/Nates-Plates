@@ -7,11 +7,13 @@ public class SinkItem : MonoBehaviour
     public int points = 0;
     private ScoreTracker scoreTracker;
     private bool isTouchingSink = false;
+    private GameMaster gm;
 
 
     private void Awake()
     {
         scoreTracker = FindObjectOfType<ScoreTracker>();
+        gm = GameObject.Find("GameMaster").GetComponent<GameMaster>();
     }
 
     // Update is called once per frame
@@ -21,6 +23,7 @@ public class SinkItem : MonoBehaviour
         {
             scoreTracker.AddPoints(points);
             GetComponentInParent<Grabber>().notHoldingAnything = true;
+            gm.TakeAction();
             Destroy(gameObject);
         }
     }

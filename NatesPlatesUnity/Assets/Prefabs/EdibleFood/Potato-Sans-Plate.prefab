@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4900344969030548100}
   - component: {fileID: 8710034579849942566}
   - component: {fileID: 4908324444428084817}
+  - component: {fileID: 6081063991332989297}
   m_Layer: 0
   m_Name: Potato-Sans-Plate
   m_TagString: Potato
@@ -114,3 +115,16 @@ CapsuleCollider2D:
   m_Offset: {x: 0.057383265, y: 0.2640044}
   m_Size: {x: 2.8576248, y: 1.4572358}
   m_Direction: 1
+--- !u!114 &6081063991332989297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4900344969030548101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d424133e7f6a240d3b344c8d319a54e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 0

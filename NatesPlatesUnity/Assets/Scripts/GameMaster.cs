@@ -30,6 +30,7 @@ public class GameMaster : MonoBehaviour
     {
         if(actionsTaken > stage*2 && stage < 5) {
             actionsTaken = 0;
+            Debug.Log("Incrementing Stage");
             stage++;
         }
     }
@@ -39,6 +40,7 @@ public class GameMaster : MonoBehaviour
     }
 
     public void TakeAction() {
+        Debug.Log("Action Taken");
         actionsTaken++;
     }
 }

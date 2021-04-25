@@ -7,11 +7,12 @@ public class ToxicItem : MonoBehaviour
     public int points = 0;
     private ScoreTracker scoreTracker;
     private bool isTouchingToxicWaste = false;
-
+    private GameMaster gm;
 
     private void Awake()
     {
         scoreTracker = FindObjectOfType<ScoreTracker>();
+        gm = GameObject.Find("GameMaster").GetComponent<GameMaster>();
     }
 
     // Update is called once per frame
@@ -21,6 +22,7 @@ public class ToxicItem : MonoBehaviour
         {
             scoreTracker.AddPoints(points);
             GetComponentInParent<Grabber>().notHoldingAnything = true;
+            gm.TakeAction();
             Destroy(gameObject);
         }
     }
