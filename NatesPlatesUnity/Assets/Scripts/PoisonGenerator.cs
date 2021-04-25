@@ -11,11 +11,10 @@ public class PoisonGenerator : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collision with " + collision.gameObject.ToString());
         GameObject other = collision.gameObject;
         if(other.tag == "Tomato" || other.tag == "PlatedTomato" || other.tag == "Potato" || other.tag == "PlatedPotato")
         {
-            if(!other.transform.Find("PoisonProperty")) {
+            if(!other.transform.Find("PoisonProperty") && !other.transform.Find("PoisonProperty(Clone)")) {
                 Debug.Log("Applying Poison");
                 other.GetComponent<SpriteRenderer>().color = Color.green;
                 GameObject prop = Instantiate(poisonProperty, new Vector3(0,0,0), Quaternion.identity) as GameObject;

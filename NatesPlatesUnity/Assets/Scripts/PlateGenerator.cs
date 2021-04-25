@@ -63,7 +63,8 @@ public class PlateGenerator : MonoBehaviour
         //  platePosition = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), 0);
 
         //Randomly generate a good plate
-        if(Random.Range(0,2) == 0) armPrefab = badArms[Random.Range(0,badArms.Length)] as GameObject;
+        // if(Random.Range(0,2) == 0) armPrefab = badArms[Random.Range(0,badArms.Length)] as GameObject;
+        if(Random.Range(0,2) == 0) armPrefab = badArms[2] as GameObject;
         else armPrefab = goodArms[Random.Range(0,goodArms.Length)] as GameObject;
         //Create Arm GameObject
         GameObject armObject = Instantiate(armPrefab, armPosition, Quaternion.identity) as GameObject;

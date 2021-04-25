@@ -13,6 +13,8 @@ public class Grabber : MonoBehaviour
 
     public SpriteRenderer gloveRenderer;
 
+    public GameObject poisonProperty;
+
     public GameObject tomato;
     public GameObject potato;
     public GameObject toxicWaste;
@@ -100,9 +102,20 @@ public class Grabber : MonoBehaviour
     {
         GetComponent<AudioSource>().PlayOneShot(schlorp);
         notHoldingAnything = false;
+        
+        bool poison = collidingObject.transform.Find("PoisonProperty") || collidingObject.transform.Find("PoisonProperty(Clone)");
+
         Instantiate(dirtyPlate, collidingObject.transform.position, collidingObject.transform.rotation);
         Destroy(collidingObject);
         GameObject new_item = Instantiate(item, grabLocation.position, grabLocation.rotation);
+
+        Debug.Log("Picking up item, poison = " + poison);
+        if(poison) {
+            new_item.GetComponent<SpriteRenderer>().color = Color.green;
+            GameObject prop = Instantiate(poisonProperty, new Vector3(0,0,0), Quaternion.identity) as GameObject;
+            prop.GetComponent<Transform>().parent = new_item.transform;
+        }
+
         new_item.transform.parent = gameObject.transform;
     }
 }
