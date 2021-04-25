@@ -5,8 +5,12 @@ using UnityEngine;
 public class Grabber : MonoBehaviour
 {
     public bool notHoldingAnything = true;
+    public bool gloved = false;
+    private bool canRemoveGlove = false;
 
     public Transform grabLocation;
+
+    public SpriteRenderer gloveRenderer;
 
     public GameObject tomato;
     public GameObject potato;
@@ -19,38 +23,76 @@ public class Grabber : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (notHoldingAnything && collision.CompareTag("PlatedTomato"))
+        if (!gloved)
         {
-            GrabItemOffPlate(tomato, collision.gameObject);
-        }
+            if (notHoldingAnything && collision.CompareTag("PlatedTomato"))
+            {
+                GrabItemOffPlate(tomato, collision.gameObject);
+            }
 
-        if (notHoldingAnything && collision.CompareTag("PlatedPotato"))
-        {
-            GrabItemOffPlate(potato, collision.gameObject);
-        }
+            if (notHoldingAnything && collision.CompareTag("PlatedPotato"))
+            {
+                GrabItemOffPlate(potato, collision.gameObject);
+            }
 
-        if (notHoldingAnything && collision.CompareTag("PlatedToxicWaste"))
-        {
-            GrabItemOffPlate(toxicWaste, collision.gameObject);
-        }
+            if (notHoldingAnything && collision.CompareTag("PlatedLighter"))
+            {
+                GrabItemOffPlate(lighter, collision.gameObject);
+            }
 
-        if (notHoldingAnything && collision.CompareTag("PlatedLighter"))
-        {
-            GrabItemOffPlate(lighter, collision.gameObject);
-        }
+            if (notHoldingAnything && collision.CompareTag("PlatedPoop"))
+            {
+                GrabItemOffPlate(poop, collision.gameObject);
+            }
 
-        if (notHoldingAnything && collision.CompareTag("PlatedPoop"))
-        {
-            GrabItemOffPlate(poop, collision.gameObject);
-        }
+            if (notHoldingAnything && collision.CompareTag("dirtyPlate"))
+            {
+                notHoldingAnything = false;
+                collision.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "HeldItem";
+                collision.gameObject.transform.position = grabLocation.position;
+                collision.gameObject.transform.parent = gameObject.transform;
+            }
 
-        if (notHoldingAnything && collision.CompareTag("dirtyPlate"))
-        {
-            notHoldingAnything = false;
-            collision.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "HeldItem";
-            collision.gameObject.transform.position = grabLocation.position;
-            collision.gameObject.transform.parent = gameObject.transform;
+            if (notHoldingAnything && collision.CompareTag("GloveSpot"))
+            {
+                canRemoveGlove = false;
+                collision.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.25f);
+                PutOnGlove();
+            }
         }
+        else
+        {
+            if (notHoldingAnything && collision.CompareTag("PlatedToxicWaste"))
+            {
+                GrabItemOffPlate(toxicWaste, collision.gameObject);
+            }
+
+            if (canRemoveGlove && notHoldingAnything && collision.CompareTag("GloveSpot"))
+            {
+                collision.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+                RemoveGlove();
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("GloveSpot"))
+        {
+            canRemoveGlove = true;
+        }
+    }
+
+    private void PutOnGlove()
+    {
+        gloved = true;
+        gloveRenderer.enabled = true;
+    }
+
+    private void RemoveGlove()
+    {
+        gloved = false;
+        gloveRenderer.enabled = false;
     }
 
     private void GrabItemOffPlate(GameObject item, GameObject collidingObject)
