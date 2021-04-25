@@ -32,6 +32,19 @@ public class GameMaster : MonoBehaviour
             actionsTaken = 0;
             Debug.Log("Incrementing Stage");
             stage++;
+            //Some stages add a game element when they're reached
+            switch(stage)
+            {
+                case 2:
+                    Debug.Log("Enter Garbage from stage left.");
+                    break;
+                case 4:
+                    Debug.Log("Enter Toxic Barrel from stage right.");
+                    break;
+                case 5:
+                    Debug.Log("Famine Mode Activated!");
+                    break;
+            }
         }
     }
 

@@ -7,15 +7,18 @@ public class PlateGenerator : MonoBehaviour
 {
     private int frameCounter;
     private int delay; //Temp delay between creating plate objects
+    public int BadSpawnRate = 2; //Lower = more bad plates, minimum is 2
     public GameObject[] goodArms; //Array containing prefab GameObjects for arms with plates with good objects (foods)
     public GameObject[] badArms; //Array containing prefab GameObjects for arms with plates with bad objects (traps, fire etc.)
     public GameObject[] goodPlates; //Array containing prefab GameObjects for plates with good objects (foods)
     public GameObject[] badPlates; //Array containing prefab GameObjects for plates with bad objects (traps, fire etc.)
     private GameObject armPrefab; //Prefab server arm GameObject
+    private GameMaster gm;
 
     // Start is called before the first frame update
     public void Start()
     {
+        gm = GameObject.Find("GameMaster").GetComponent<GameMaster>();
         frameCounter = 0;
         delay = 200;
     }
@@ -55,16 +58,37 @@ public class PlateGenerator : MonoBehaviour
                 armRotate = 90.0f;
                 break;
         }
-        // var armDirection = armPosition - platePosition
-        // Moon.transform.LookAt(Sun.transform);
-        //Add Transform.LookAt to the arm
 
-        //  armPosition = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), 0);
-        //  platePosition = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), 0);
+        //Default to tomato in case random plate generation fails
+        armPrefab = goodArms[0];
 
-        //Randomly generate a good plate
-        if (Random.Range(0, 2) == 0) armPrefab = badArms[Random.Range(0, badArms.Length)] as GameObject;
-        else armPrefab = goodArms[Random.Range(0,goodArms.Length)] as GameObject;
+        //Determine which type of plate to generate based on the current stage
+        switch(gm.GetStage())
+        {
+            case 0: //Tomatoes
+                armPrefab = goodArms[0];
+                break;
+            case 1: //Tomatoes, Potatoes
+                armPrefab = goodArms[Random.Range(0,goodArms.Length)];
+                break;
+            case 2: //Tomatoes, Potatoes, Poop
+                if(Random.Range(0, BadSpawnRate) == 0)
+                    armPrefab = badArms[0];
+                else armPrefab = goodArms[Random.Range(0,goodArms.Length)];
+                break;
+            case 3: //Tomatoes, Potatoes, Poop, Poison
+                if(Random.Range(0, BadSpawnRate) == 0)
+                    armPrefab = badArms[Random.Range(0, 2)];
+                else armPrefab = goodArms[Random.Range(0,goodArms.Length)];
+                break;
+            case 4: //Tomatoes, Potatoes, Poop, Poison, Toxic Waste
+            case 5:
+                if(Random.Range(0, BadSpawnRate) == 0)
+                    armPrefab = badArms[Random.Range(0, badArms.Length)];
+                else armPrefab = goodArms[Random.Range(0,goodArms.Length)];
+                break;
+        }
+        
         //Create Arm GameObject
         GameObject armObject = Instantiate(armPrefab, armPosition, Quaternion.identity) as GameObject;
         ArmMover armScript = armObject.GetComponent(typeof(ArmMover)) as ArmMover;
