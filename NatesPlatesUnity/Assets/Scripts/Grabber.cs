@@ -24,6 +24,23 @@ public class Grabber : MonoBehaviour
     public GameObject dirtyPlate;
 
 
+    private void Start()
+    {
+        StartCoroutine("CheckIfHolding");
+    }
+
+    private IEnumerator CheckIfHolding()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.25f);
+            notHoldingAnything = !transform.GetComponentInChildren<EdibleFood>()
+                && !transform.GetComponentInChildren<ToxicItem>()
+                && !transform.GetComponentInChildren<TrashItem>()
+                && !transform.GetComponentInChildren<SinkItem>();
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!gloved)
