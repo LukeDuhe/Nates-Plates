@@ -16,6 +16,7 @@ public class GameMaster : MonoBehaviour
     */
     private int stage; //Stage Level is used to determine what plates to spawn and how often, as well as scoring
     private int actionsTaken; //Stage increments as the player takes more actions (eats, throws plates away, etc.)
+    private float plateSpawnRate;
 
 
     // Start is called before the first frame update
@@ -23,6 +24,8 @@ public class GameMaster : MonoBehaviour
     {
         actionsTaken = 0;
         stage = 0;
+        plateSpawnRate = 5.0f;
+        Debug.Log("Plate Rate = " + plateSpawnRate);
     }
 
     // Update is called once per frame
@@ -30,19 +33,29 @@ public class GameMaster : MonoBehaviour
     {
         if(actionsTaken > stage*2 && stage < 5) {
             actionsTaken = 0;
-            Debug.Log("Incrementing Stage");
+            // Debug.Log("Incrementing Stage");
             stage++;
             //Some stages add a game element when they're reached
             switch(stage)
             {
+                case 0:
+                    break;
+                case 1:
+                    break;
                 case 2:
                     Debug.Log("Enter Garbage from stage left.");
+                    plateSpawnRate -= 0.25f;
+                    Debug.Log("Plate Rate = " + plateSpawnRate);
                     break;
                 case 4:
                     Debug.Log("Enter Toxic Barrel from stage right.");
+                    plateSpawnRate -= 0.25f;
+                    Debug.Log("Plate Rate = " + plateSpawnRate);
                     break;
                 case 5:
                     Debug.Log("Famine Mode Activated!");
+                    plateSpawnRate -= 0.5f;
+                    Debug.Log("Plate Rate = " + plateSpawnRate);
                     break;
             }
         }
@@ -52,8 +65,13 @@ public class GameMaster : MonoBehaviour
         return stage;
     }
 
+    public float GetPlateSpawnRate()
+    {
+        return plateSpawnRate;
+    }
+
     public void TakeAction() {
-        Debug.Log("Action Taken");
+        // Debug.Log("Action Taken");
         actionsTaken++;
     }
 }

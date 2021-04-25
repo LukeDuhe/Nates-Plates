@@ -8,6 +8,7 @@ public class PlateGenerator : MonoBehaviour
     private int frameCounter;
     private int delay; //Temp delay between creating plate objects
     public int BadSpawnRate = 2; //Lower = more bad plates, minimum is 2
+    public float PlateSpawnRate = 5.0f;
     public GameObject[] goodArms; //Array containing prefab GameObjects for arms with plates with good objects (foods)
     public GameObject[] badArms; //Array containing prefab GameObjects for arms with plates with bad objects (traps, fire etc.)
     public GameObject[] goodPlates; //Array containing prefab GameObjects for plates with good objects (foods)
@@ -21,6 +22,8 @@ public class PlateGenerator : MonoBehaviour
         gm = GameObject.Find("GameMaster").GetComponent<GameMaster>();
         frameCounter = 0;
         delay = 200;
+        PlateSpawnRate = gm.GetPlateSpawnRate();
+        StartCoroutine("PlateSpawnTimer");
     }
 
     // Update is called once per frame
@@ -29,6 +32,16 @@ public class PlateGenerator : MonoBehaviour
         if(frameCounter++ > delay) {
             frameCounter = 0;
             if(delay > 50) delay-=10;
+            GeneratePlate();
+        }
+    }
+
+    private IEnumerator PlateSpawnTimer()
+    {
+        while (true)
+        {
+            PlateSpawnRate = gm.GetPlateSpawnRate();
+            yield return new WaitForSeconds(PlateSpawnRate);
             GeneratePlate();
         }
     }
