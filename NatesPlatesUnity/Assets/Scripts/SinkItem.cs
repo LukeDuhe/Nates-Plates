@@ -24,6 +24,7 @@ public class SinkItem : MonoBehaviour
             scoreTracker.AddPoints(points);
             GetComponentInParent<Grabber>().notHoldingAnything = true;
             gm.TakeAction();
+            gm.RemoveItem();
             Destroy(gameObject);
         }
     }
