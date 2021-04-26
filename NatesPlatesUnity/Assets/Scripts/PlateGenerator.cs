@@ -35,7 +35,7 @@ public class PlateGenerator : MonoBehaviour
     {
         while (true)
         {
-            if(graceFlag && gm.GetNumItems() >= gm.GetItemLimit()) {
+            if(graceFlag || gm.GetNumItems() >= gm.GetItemLimit()) {
                 graceFlag = false;
                 yield return new WaitForSeconds(PlateGracePeriod);
             }
