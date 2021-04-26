@@ -2478,7 +2478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1993152828095050980, guid: 53f5d7e9df4264a8c95d7985c1a0f691, type: 3}
       propertyPath: horizontal_min
-      value: -14
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1993152828095050982, guid: 53f5d7e9df4264a8c95d7985c1a0f691, type: 3}
       propertyPath: schlorp
@@ -3264,7 +3264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1993152828095050980, guid: 53f5d7e9df4264a8c95d7985c1a0f691, type: 3}
       propertyPath: horizontal_max
-      value: 14
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1993152828095050980, guid: 53f5d7e9df4264a8c95d7985c1a0f691, type: 3}
       propertyPath: horizontal_min
