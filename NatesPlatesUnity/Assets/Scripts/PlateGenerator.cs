@@ -59,15 +59,19 @@ public class PlateGenerator : MonoBehaviour
         switch(tableQuadrant) {
             case 0: //Left Table Quadrant
                 armPosition = new Vector3(-20.0f, Random.Range(-14.0f, 14.0f));
-                platePosition = new Vector3(Random.Range(-10.0f, -8.0f), Random.Range(-3.5f, 1.7f));
+                platePosition = new Vector3(Random.Range(-10.0f, -8.0f), Random.Range(-4.5f, 1.7f));
                 armRotate = -90.0f;
                 break;
             case 1: //Right Table Quadrant
                 armPosition = new Vector3(20.0f, Random.Range(-14.0f, 14.0f));
-                platePosition = new Vector3(Random.Range(8.0f, 10.0f), Random.Range(-3.5f, 1.7f));
+                platePosition = new Vector3(Random.Range(8.0f, 10.0f), Random.Range(-4.5f, 1.7f));
                 armRotate = 90.0f;
                 break;
             case 2: //Top Table Quadrant
+                armPosition = new Vector3(Random.Range(-20.0f, 20.0f), 14.0f);
+                platePosition = new Vector3(Random.Range(-9.0f, 9.0f), Random.Range(-1.0f, 1.7f));
+                armRotate = -90.0f;
+                break;
             case 3:
                 armPosition = new Vector3(Random.Range(-20.0f, 20.0f), 14.0f);
                 platePosition = new Vector3(Random.Range(-9.0f, 9.0f), Random.Range(-1.0f, 1.7f));
