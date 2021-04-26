@@ -45,11 +45,15 @@ public class GameMaster : MonoBehaviour
                 case 1:
                     break;
                 case 2:
+                    GameObject.Find("Floating-Trash").GetComponent<RecepticalMovement>().BringItIn();
                     Debug.Log("Enter Garbage from stage left.");
                     plateSpawnRate -= 0.25f;
                     Debug.Log("Plate Rate = " + plateSpawnRate);
                     break;
                 case 4:
+                    GameObject.Find("GloveSpotLeft").GetComponent<RecepticalMovement>().BringItIn();
+                    GameObject.Find("GloveSpotRight").GetComponent<RecepticalMovement>().BringItIn();
+                    GameObject.Find("Floating-NukeWaste").GetComponent<RecepticalMovement>().BringItIn();
                     Debug.Log("Enter Toxic Barrel from stage right.");
                     plateSpawnRate -= 0.25f;
                     Debug.Log("Plate Rate = " + plateSpawnRate);

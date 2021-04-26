@@ -61,7 +61,7 @@ public class RecepticalMovement : MonoBehaviour
         }
     }
 
-    private void BringItIn()
+    public void BringItIn()
     {
         comingIn = true;
     }

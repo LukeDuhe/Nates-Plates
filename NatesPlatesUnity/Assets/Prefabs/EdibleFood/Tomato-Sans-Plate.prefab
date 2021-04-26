@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e4af3461fb74bb8a38d73e048d8e7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recovery: 10
   points: 800
   munchingSound: {fileID: 8300000, guid: fa1f108477af8448e8ad96e0aac67b69, type: 3}
 --- !u!70 &4193048500794095114

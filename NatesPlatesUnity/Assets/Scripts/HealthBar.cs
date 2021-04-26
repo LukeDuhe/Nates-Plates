@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthBar : MonoBehaviour
 {
-    public float healthLossPerSecond = 2;
+    public float healthLossPerSecond = 1;
 
     private float maxHealth = 100;
     private float hp = 100;

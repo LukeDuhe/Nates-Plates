@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5364004218858086487}
   m_Layer: 0
   m_Name: Toxic-Waste-Sans-Plate
-  m_TagString: Untagged
+  m_TagString: ToxicWaste
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

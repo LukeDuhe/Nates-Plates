@@ -66,14 +66,6 @@ public class Grabber : MonoBehaviour
                 GrabItemOffPlate(poop, collision.gameObject);
             }
 
-            if (collision.CompareTag("dirtyPlate"))
-            {
-                notHoldingAnything = false;
-                collision.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "HeldItem";
-                collision.gameObject.transform.position = grabLocation.position;
-                collision.gameObject.transform.parent = gameObject.transform;
-            }
-
             if (collision.CompareTag("GloveSpotLeft") && !isRightTentacle)
             {
                 canRemoveGlove = false;
@@ -87,6 +79,20 @@ public class Grabber : MonoBehaviour
                 collision.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.25f);
                 PutOnGlove();
             }
+
+
+
+            if (
+                collision.CompareTag("dirtyPlate")
+                || collision.CompareTag("Poop")
+                || collision.CompareTag("Lighter")
+                || collision.CompareTag("ToxicWaste")
+                || collision.CompareTag("Tomato")
+                || collision.CompareTag("Potato")
+            )
+            {
+                GrabItemSansPlate(collision.gameObject);
+            }        
         }
         else
         {
@@ -153,5 +159,13 @@ public class Grabber : MonoBehaviour
         }
 
         new_item.transform.parent = gameObject.transform;
+    }
+
+    private void GrabItemSansPlate(GameObject collidingObject)
+    {
+        notHoldingAnything = false;
+        collidingObject.GetComponent<SpriteRenderer>().sortingLayerName = "HeldItem";
+        collidingObject.transform.position = grabLocation.position;
+        collidingObject.transform.parent = gameObject.transform;
     }
 }
