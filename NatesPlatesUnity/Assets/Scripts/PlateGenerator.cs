@@ -35,7 +35,7 @@ public class PlateGenerator : MonoBehaviour
     {
         while (true)
         {
-            if(graceFlag) {
+            if(graceFlag && gm.GetNumItems() < gm.GetItemLimit()) {
                 graceFlag = false;
                 yield return new WaitForSeconds(PlateGracePeriod);
             }
@@ -53,7 +53,7 @@ public class PlateGenerator : MonoBehaviour
         Vector3 armPosition = new Vector3(0,0,0);
         Vector3 platePosition = new Vector3(0,0,0);
         float armRotate = 0.0f;
-        int tableQuadrant = Random.Range(0, 3);
+        int tableQuadrant = Random.Range(0, 4);
         // tableQuadrant = 2;
         switch(tableQuadrant) {
             case 0: //Left Table Quadrant
@@ -61,16 +61,18 @@ public class PlateGenerator : MonoBehaviour
                 platePosition = new Vector3(Random.Range(-10.0f, -8.0f), Random.Range(-6.5f, 1.7f));
                 armRotate = -90.0f;
                 break;
-            case 1: //Top Table Quadrant
-                armPosition = new Vector3(Random.Range(-20.0f, 20.0f), 14.0f);
-                platePosition = new Vector3(Random.Range(-9.0f, 9.0f), Random.Range(-1.0f, 1.7f));
-                armRotate = -90.0f;
-                break;
-            case 2: //Right Table Quadrant
+            case 1: //Right Table Quadrant
                 armPosition = new Vector3(20.0f, Random.Range(-14.0f, 14.0f));
                 platePosition = new Vector3(Random.Range(8.0f, 10.0f), Random.Range(-6.5f, 1.7f));
                 armRotate = 90.0f;
                 break;
+            case 2: //Top Table Quadrant
+            case 3:
+                armPosition = new Vector3(Random.Range(-20.0f, 20.0f), 14.0f);
+                platePosition = new Vector3(Random.Range(-9.0f, 9.0f), Random.Range(-1.0f, 1.7f));
+                armRotate = -90.0f;
+                break;
+            
         }
 
         //Default to tomato in case random plate generation fails

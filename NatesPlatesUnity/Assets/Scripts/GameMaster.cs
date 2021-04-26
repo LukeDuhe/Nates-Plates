@@ -60,6 +60,7 @@ public class GameMaster : MonoBehaviour
                     break;
                 case 5:
                     Debug.Log("Famine Mode Activated!");
+                    GameObject.Find("HealthBar").GetComponent<HealthBar>().healthLossPerSecond = 2;
                     plateSpawnRate -= 0.5f;
                     Debug.Log("Plate Rate = " + plateSpawnRate);
                     break;
@@ -89,6 +90,11 @@ public class GameMaster : MonoBehaviour
     public int GetItemLimit()
     {
         return itemLimit;
+    }
+
+    public int GetNumItems()
+    {
+        return numItems;
     }
 
     public void TakeAction() {
