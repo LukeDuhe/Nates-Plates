@@ -5,7 +5,7 @@ using UnityEngine;
 public class RecepticalMovement : MonoBehaviour
 {
     private bool movementActive = false;
-    private bool comingIn = false;
+    public bool comingIn = false;
 
     public int speed = 1;
 

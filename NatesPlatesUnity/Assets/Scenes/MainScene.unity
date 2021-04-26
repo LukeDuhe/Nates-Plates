@@ -1854,6 +1854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb17b88b576d94bfca5ae68cf72447e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comingIn: 0
   speed: 1
   radius: 0
   centerPosition: {x: 8.25, y: -7, z: 0}
@@ -1875,6 +1876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb17b88b576d94bfca5ae68cf72447e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comingIn: 0
   speed: 1
   radius: 0
   centerPosition: {x: -8.25, y: -7, z: 0}
@@ -3176,6 +3178,10 @@ PrefabInstance:
     - target: {fileID: 1174310118939719454, guid: 9512daa2430fc4c0195c09d107a04952, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174310118939719455, guid: 9512daa2430fc4c0195c09d107a04952, type: 3}
+      propertyPath: comingIn
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1174310118939719455, guid: 9512daa2430fc4c0195c09d107a04952, type: 3}
       propertyPath: movementActive

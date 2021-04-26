@@ -101,6 +101,11 @@ public class Grabber : MonoBehaviour
                 GrabItemOffPlate(toxicWaste, collision.gameObject);
             }
 
+            if (notHoldingAnything && collision.CompareTag("ToxicWaste"))
+            {
+                GrabItemSansPlate(collision.gameObject);
+            }
+
             if (canRemoveGlove && notHoldingAnything && collision.CompareTag("GloveSpotLeft") && !isRightTentacle)
             {
                 collision.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);

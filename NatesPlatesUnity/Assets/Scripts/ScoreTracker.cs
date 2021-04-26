@@ -7,6 +7,12 @@ public class ScoreTracker : MonoBehaviour
 {
     private int score = 0;
     public Text text;
+    private GameMaster gm;
+
+    private void Start()
+    {
+        gm = GameObject.Find("GameMaster").GetComponent<GameMaster>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -16,6 +22,13 @@ public class ScoreTracker : MonoBehaviour
 
     public void AddPoints(int points)
     {
-        score += points;
+        if (gm.GetStage() == 0)
+        {
+            score += points;
+        }
+        else
+        {
+            score += points * 8 * gm.GetStage();
+        }
     }
 }
