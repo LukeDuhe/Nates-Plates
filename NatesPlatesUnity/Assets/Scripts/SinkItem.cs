@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class SinkItem : MonoBehaviour
 {
+    public AudioClip sinkSound;
     public int points = 0;
     private ScoreTracker scoreTracker;
     private bool isTouchingSink = false;
     private GameMaster gm;
-
+    private GameObject sink;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class SinkItem : MonoBehaviour
     {
         if (isTouchingSink)
         {
+            sink.GetComponent<AudioSource>().PlayOneShot(sinkSound);
             scoreTracker.AddPoints(points);
             GetComponentInParent<Grabber>().notHoldingAnything = true;
             gm.TakeAction();
@@ -33,6 +35,7 @@ public class SinkItem : MonoBehaviour
     {
         if (collision.CompareTag("Sink"))
         {
+            sink = collision.gameObject;
             isTouchingSink = true;
         }
     }

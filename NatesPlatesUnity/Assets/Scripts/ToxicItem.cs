@@ -8,9 +8,12 @@ public class ToxicItem : MonoBehaviour
     private ScoreTracker scoreTracker;
     private bool isTouchingToxicWaste = false;
     private GameMaster gm;
+    private AudioClip nuclearSound;
+    private GameObject toxicWasteBin;
 
     private void Awake()
     {
+        nuclearSound = Resources.Load<AudioClip>("OtherSounds/Nuclear");
         scoreTracker = FindObjectOfType<ScoreTracker>();
         gm = GameObject.Find("GameMaster").GetComponent<GameMaster>();
     }
@@ -20,6 +23,7 @@ public class ToxicItem : MonoBehaviour
     {
         if (isTouchingToxicWaste)
         {
+            toxicWasteBin.GetComponent<AudioSource>().PlayOneShot(nuclearSound);
             scoreTracker.AddPoints(points);
             GetComponentInParent<Grabber>().notHoldingAnything = true;
             gm.TakeAction();
@@ -31,6 +35,7 @@ public class ToxicItem : MonoBehaviour
     {
         if (collision.CompareTag("ToxicWasteBin"))
         {
+            toxicWasteBin = collision.gameObject;
             isTouchingToxicWaste = true;
         }
     }

@@ -144,4 +144,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11925d400a78443febcc37b18ceae21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sinkSound: {fileID: 8300000, guid: e8adbeb4c10414da7b2753df8c7c8d95, type: 3}
   points: 8

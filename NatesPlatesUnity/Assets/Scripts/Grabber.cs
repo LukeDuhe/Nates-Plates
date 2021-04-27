@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Grabber : MonoBehaviour
 {
+    public AudioClip gloveSound;
+    public AudioClip reverseGloveSound;
     public AudioClip schlorp;
     public bool notHoldingAnything = true;
     public bool gloved = false;
@@ -135,12 +137,14 @@ public class Grabber : MonoBehaviour
 
     private void PutOnGlove()
     {
+        GetComponent<AudioSource>().PlayOneShot(gloveSound);
         gloved = true;
         gloveRenderer.enabled = true;
     }
 
     private void RemoveGlove()
     {
+        GetComponent<AudioSource>().PlayOneShot(reverseGloveSound);
         gloved = false;
         gloveRenderer.enabled = false;
     }
@@ -168,6 +172,7 @@ public class Grabber : MonoBehaviour
 
     private void GrabItemSansPlate(GameObject collidingObject)
     {
+        GetComponent<AudioSource>().PlayOneShot(schlorp);
         notHoldingAnything = false;
         collidingObject.GetComponent<SpriteRenderer>().sortingLayerName = "HeldItem";
         collidingObject.transform.position = grabLocation.position;
