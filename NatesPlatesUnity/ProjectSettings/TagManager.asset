@@ -90,3 +90,6 @@ TagManager:
   - name: HUD02
     uniqueID: 3049285063
     locked: 0
+  - name: RedDangerGlow
+    uniqueID: 1199425187
+    locked: 0
