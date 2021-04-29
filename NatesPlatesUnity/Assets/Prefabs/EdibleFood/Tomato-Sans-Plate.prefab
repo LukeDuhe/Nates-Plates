@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -7557304581182904790}
   - component: {fileID: 4193048500794095114}
   - component: {fileID: 5994204439248034652}
+  - component: {fileID: -4067563903991872396}
   m_Layer: 0
   m_Name: Tomato-Sans-Plate
   m_TagString: Tomato
@@ -129,3 +130,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
+--- !u!95 &-4067563903991872396
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772881786945037602}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 28aafde52f43341b0adfeaf495ef344e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

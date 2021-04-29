@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3591704393772670970}
   - component: {fileID: 4576931389096561973}
   - component: {fileID: 8999395909771959800}
+  - component: {fileID: -2267363751194753497}
   m_Layer: 0
   m_Name: Poop-Sans-Plate
   m_TagString: Poop
@@ -122,5 +123,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d424133e7f6a240d3b344c8d319a54e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashSound: {fileID: 8300000, guid: bd170f10f424e41e49709e1af311d4e1, type: 3}
   points: 8
+--- !u!95 &-2267363751194753497
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838429171136748086}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 934c07b066ffa4e798f9a0af147eb93a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

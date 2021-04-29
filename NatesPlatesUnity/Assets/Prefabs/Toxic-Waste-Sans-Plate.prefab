@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3671908547889923817}
   - component: {fileID: 5185426539629886462}
   - component: {fileID: 5364004218858086487}
+  - component: {fileID: -2257216933642368402}
   m_Layer: 0
   m_Name: Toxic-Waste-Sans-Plate
   m_TagString: ToxicWaste
@@ -123,3 +124,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7486023, y: 2.259336}
   m_EdgeRadius: 0
+--- !u!95 &-2257216933642368402
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7761983499912400132}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 04857ab822ae4439c8004177f7687d3e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

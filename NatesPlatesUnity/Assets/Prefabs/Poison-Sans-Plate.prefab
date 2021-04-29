@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8202840820293710796}
   - component: {fileID: 3293131250770819294}
   - component: {fileID: 3048584216275831247}
+  - component: {fileID: 8238811045369931318}
   m_Layer: 0
   m_Name: Poison-Sans-Plate
   m_TagString: Lighter
@@ -127,3 +128,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 8
+--- !u!95 &8238811045369931318
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8273706406834649829}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b27936b375a8645aa9a7db9bb13bcf74, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
